@@ -1,25 +1,89 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-        <title>ESEC</title>
+<html ng-app="esec-website">
+   <head>
+      <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css" />
 
-        <script src="../static/lib/angular.min.js"></script>
-        <script src="../static/lib/jquery-1.11.3.min.js"></script>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-        <!-- Include all compiled plugins (below), or include individual files as needed -->
-        <script src="../static/js/bootstrap.min.js"></script>
-        <!-- Bootstrap -->
-        <link href="../static/css/bootstrap.min.css" rel="stylesheet">
-    </head>
+      <script type="text/javascript" src="../static/lib/angular.min.js"></script>
+      <link rel="stylesheet" type="text/css" href="../static/css/scrolling-nav.css" />
+      <script src="../static/lib/jquery.js"></script>
 
-    <body>
-        <h1>Rahul you can put your stuff here</h1>
+      <!-- Scrolling Nav JavaScript -->
+      <script src="../static/lib/jquery.easing.min.js"></script>
+      <script src="../static/lib/scrolling-nav.js"></script>
 
-        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-   
-    </body>
+      <script type="text/javascript" src="../static/js/app.js"></script>
+      <!-- jQuery -->
+   </head>
+   <body id="page-top">
+      <!-- Navigation -->
+      <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+         <div class="container">
+            <div class="navbar-header page-scroll">
+               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+               </button>
+               <a class="navbar-brand page-scroll" href="#page-top">Engineering Science Education Conference</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+               <ul class="nav navbar-nav">
+                  <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                  <li class="hidden">
+                     <a class="page-scroll" href="#page-top"></a>
+                  </li>
+                  <li>
+                     <a class="page-scroll" href="#about">About</a>
+                  </li>
+                  <li>
+                     <a class="page-scroll" href="#services">Services</a>
+                  </li>
+                  <li>
+                     <a class="page-scroll" href="#contact">Contact</a>
+                  </li>
+               </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+         </div>
+         <!-- /.container -->
+      </nav>
+      <section class="panel-body" style="height:100%; padding-top:120px; background-image:url(../static/image/dark_embroidery.png);">
+         
+      </section>
+      <div style="background-color:white;">
+         <section class="container" ng-controller="PanelController as panel">
+            <div class="page-header">
+               <h1>Welcome to ESEC! <small>What can we do you for?</small></h1>
+            </div>
+            <div class="panel-body" ng-controller="SpeakerController as ESEC">
+               <div class="row">
+                  <div class="col-md-6">
+                     <div class="col-sm-6 col-md-4" ng-repeat="(index, speaker) in ESEC.speakers">
+                        <a href ng-click="panel.selectTab(index)" class="thumbnail" style="height:250px; text-align:center;">
+                           <img src="https://thebenclark.files.wordpress.com/2014/03/facebook-default-no-profile-pic.jpg" alt="profile picture">
+                           <div class="caption">
+                              <h3>{{speaker.name}}</h3>
+                           </div>
+                        </a>
+                     </div>
+                  </div>
+                  <div class="col-md-6">
+                     <ul class="list-group">
+                        <li class="list-group-item" ng-repeat="(index, speaker) in ESEC.speakers" ng-show="panel.isSelected(index)">
+                           <h3> 
+                              {{speaker.name}} 
+                              <em class="pull-right">{{speaker.provenance}}</em>
+                           </h3>
+                           <p>{{speaker.description}}</p>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </section>
+      </div>
+   </body>
 </html>

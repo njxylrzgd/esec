@@ -8,11 +8,7 @@ import os.path
 
 app = Flask(__name__)
 
-@app.route('/')
-def hello_world():
-    return 'Hello World!'
-
-@app.route('/index', methods=['GET'])
+@app.route('/', methods=['GET'])
 def index():
 	content = get_file('templates/index.html')
 	return Response(content, mimetype="text/html")
