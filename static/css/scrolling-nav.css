@@ -14,6 +14,14 @@ html {
     height: 100%;
 }
 
+.navbar-default .navbar-brand {
+   color: white;
+}
+
+.navbar-default .navbar-nav>li>a {
+   color: orange;
+}
+
 @media(min-width:767px) {
     .navbar {
         padding: 20px 0;
@@ -26,8 +34,7 @@ html {
 
     .top-nav-collapse {
         padding: 0;
-        background-color: white;
-        border-bottom-color: grey;
+        background-color: #191970;
     }
 }
 
@@ -44,16 +51,14 @@ of those sections to manage the look and feel of the site. */
 
 .about-section {
     height: 100%;
-    padding-top: 150px;
-    text-align: center;
-    background: #eee;
+    padding-top: 75px;
+    background: #fff;
 }
 
-.services-section {
+.speaker-section {
     height: 100%;
-    padding-top: 150px;
-    text-align: center;
-    background: #fff;
+    padding-top: 75px;
+    background: #eee;
 }
 
 .contact-section {
