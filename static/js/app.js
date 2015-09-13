@@ -16,6 +16,34 @@
       };
    });
    
+   app.controller('TimerController', function($scope) {
+		$scope.dateDiff = dateDiff;
+		$scope.test = 12;
+
+		setInterval(function () {  
+			$scope.endtime = 1454302800000;
+			$scope.getTime = new Date();
+			$scope.currentTimeInMs = $scope.getTime.getTime();
+			console.log(dateDiff(Number($scope.currentTimeInMs), Number($scope.endtime)));
+			$scope.$apply(function () {
+				$scope.timeDiff = dateDiff(Number($scope.currentTimeInMs), Number($scope.endtime));
+			});
+		}, 1000);
+		
+		function dateDiff( str1, str2 ) {
+			var diff = str2 - str1;//Date.parse( str2 ) - Date.parse( str1 ); 
+			return isNaN( diff ) ? NaN : {
+				diff : diff,
+				ms : Math.floor( diff            % 1000 ),
+				s  : Math.floor( diff /     1000 %   60 ),
+				m  : Math.floor( diff /    60000 %   60 ),
+				h  : Math.floor( diff /  3600000 %   24 ),
+				d  : Math.floor( diff / 86400000        )
+			};
+		}
+
+		
+	});
    var guests = [
       {          
          name: 'Mr. Nitin Kawale',
