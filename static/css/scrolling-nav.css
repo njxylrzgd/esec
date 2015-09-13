@@ -24,12 +24,13 @@ html {
 
 @media(min-width:767px) {
     .navbar {
-        padding: 20px 0;
+        padding: 20px 0 50px 0;
         border-bottom-color: transparent;
         -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
         -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
         transition: background .5s ease-in-out,padding .5s ease-in-out;
-        background-color: transparent;
+        background: linear-gradient(rgba(25,25,112,0.75), transparent);
+        border: none;
     }
 
     .top-nav-collapse {
@@ -50,20 +51,19 @@ of those sections to manage the look and feel of the site. */
 }
 
 .about-section {
-    height: 100%;
+    min-height: 100%;
     padding-top: 75px;
     background: #fff;
 }
 
 .speaker-section {
-    height: 100%;
+    min-height: 100%;
     padding-top: 75px;
     background: #eee;
 }
 
 .contact-section {
-    height: 100%;
-    padding-top: 150px;
-    text-align: center;
-    background: #eee;
+    min-height: 100%;
+    padding-top: 75px;
+    background: #fff;
 }
