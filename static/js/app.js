@@ -24,7 +24,6 @@
 			$scope.endtime = 1454302800000;
 			$scope.getTime = new Date();
 			$scope.currentTimeInMs = $scope.getTime.getTime();
-			console.log(dateDiff(Number($scope.currentTimeInMs), Number($scope.endtime)));
 			$scope.$apply(function () {
 				$scope.timeDiff = dateDiff(Number($scope.currentTimeInMs), Number($scope.endtime));
 			});
