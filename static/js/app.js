@@ -52,7 +52,7 @@
          school: 'President of Enterprise Business Unit at Rogers Communications',
          description: [''],
          url:'https://www.linkedin.com/profile/view?id=3195933&authType=NAME_SEARCH&authToken=bOPg&locale=en_US&srchid=292640571435159651811&srchindex=1&srchtotal=7&trk=vsrp_people_res_name&trkInfo=VSRPsearchId%3A292640571435159651811%2CVSRPtargetId%3A3195933%2CVSRPcmpt%3Aprimary%2CVSRPnm%3Atrue',
-         img:'https://thebenclark.files.wordpress.com/2014/03/facebook-default-no-profile-pic.jpg'
+         img:'image/nitin_kawale.jpg'
       },
       {   
          name: 'Dr. Steve Zan',
